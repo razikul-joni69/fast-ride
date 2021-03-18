@@ -1,0 +1,17 @@
+.row {
+    /* display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around; */
+    margin-top: 100px;
+}
+.card-div{
+    
+    height: 280px;
+    width: 260px;
+    border: 1px solid grey;
+    margin: 5px;
+    border-radius: 10px;
+}
+.card-div > img{
+    width: 250px;
+}
