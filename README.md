@@ -6,4 +6,6 @@ This is a ride sharing app(React app). Where you can find different type of vehi
 
 https://ph-assignment09.web.app
 
-### `yarn start`
+### `Details About this app`
+
+This is a React app where I use react-bootstrap, react-fontawsome, react-router etc.
