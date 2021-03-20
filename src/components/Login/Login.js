@@ -94,7 +94,7 @@ function Login() {
     };
 
     return (
-        <div className="form-container">
+        <div className="mt-5 form-container">
             <div className="form-card">
                 {user.isLoggedIn && (
                     <div>
@@ -160,13 +160,7 @@ function Login() {
                         </div>
                     </p>
                     <h3 className="text-warning">Or</h3>
-                    {/* {user.isLoggedIn ? (
-                        <button onClick={signOut}>Sign Out</button>
-                    ) : (
-                        <button onClick={googleSignIn}>
-                            Sign in With Google
-                        </button>
-                    )} */}
+                    
                     <button
                         className="btn btn-danger btn-block"
                         onClick={googleSignIn}

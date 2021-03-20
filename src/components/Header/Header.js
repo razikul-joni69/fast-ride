@@ -10,7 +10,7 @@ const Header = () => {
     return (
         <div className="header">
             <Navbar className="container" bg="" variant="light">
-                <Navbar.Brand to="/home">Fast Ride</Navbar.Brand>
+                <Link to="/home"><Navbar.Brand to="/home">Fast Ride</Navbar.Brand></Link>
                 <Nav className="ml-auto">
                     <Link className="nav-link  " to="/home">
                         Home
