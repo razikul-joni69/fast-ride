@@ -1,0 +1,12 @@
+.form-container {
+    /* width: 400px; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+.form-card{
+    width: 500px;
+    border: 1px solid grey;
+    padding: 10px 20px;
+    border-radius: 10px;
+}
