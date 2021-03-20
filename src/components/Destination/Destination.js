@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import "./Destination.css";
 
 const Direction = (props) => {
-    let { title } = useParams();
+    const { title } = useParams();
     console.log(title);
 
     const [destination, setDestination] = useState({
