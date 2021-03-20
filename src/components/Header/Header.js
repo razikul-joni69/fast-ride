@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../App";
+import "./Header.css";
 
 const Header = () => {
+    const [loggedInUser] = useContext(UserContext);
+    console.log(loggedInUser.name);
     return (
         <div className="header">
-            <Navbar className="container" bg="dark" variant="dark">
+            <Navbar className="container" bg="" variant="light">
                 <Navbar.Brand to="/home">Fast Ride</Navbar.Brand>
                 <Nav className="ml-auto">
                     <Link className="nav-link  " to="/home">
@@ -20,13 +24,19 @@ const Header = () => {
                     <Link className="nav-link " to="/contact">
                         Contact
                     </Link>
-
-                    <Link
-                        className="nav-link btn btn-primary btn-sm"
-                        to="/login"
-                    >
-                        Login
-                    </Link>
+                    {loggedInUser.name ? (
+                        <Link className="nav-link text-warning" to="/user">
+                            {" "}
+                            {loggedInUser.name}
+                        </Link>
+                    ) : (
+                        <Link
+                            className="nav-link btn btn-primary btn-sm"
+                            to="/login"
+                        >
+                            Login
+                        </Link>
+                    )}
                 </Nav>
             </Navbar>
         </div>

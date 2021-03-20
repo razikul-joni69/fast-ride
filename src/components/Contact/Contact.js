@@ -2,9 +2,12 @@ import React from "react";
 import { Button, Form } from "react-bootstrap";
 
 const Contact = () => {
+    const styles ={
+        width: '50%',
+    }
     return (
-        <div>
-            <Form>
+        <div  className="d-flex justify-content-center mt-5">
+            <Form style={styles}>
                 <Form.Group controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />

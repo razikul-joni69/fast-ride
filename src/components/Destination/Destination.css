@@ -1,4 +1,27 @@
 .search-form{
-    background: rgba(128, 128, 128, 0.432);
+    background: rgba(128, 128, 128, 0.295);
     padding: 10px;
+    border-radius: 10px;
+}
+.search-form2{
+    background-color: rgba(255, 99, 71, 0.795);
+    padding: 10px;
+    border-radius: 10px;
+}
+.search-result{
+    color: black;
+    background: rgb(247, 119, 96);
+    border-radius: 5px;
+    padding: 10px;
+}
+.map-destination{
+    margin-top: 10px;
+}
+.map{
+    height: 550px;
+    width: 100%;
+}
+.inner-search{
+    padding: 0 10px;
+    border-left: 5px solid grey;
 }

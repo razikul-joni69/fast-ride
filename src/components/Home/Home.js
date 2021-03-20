@@ -5,7 +5,6 @@ const Home = () => {
     const style = {
         marginTop: "100px",
         display: "flex",
-        // margin: "40px",
         justifyContent: "center",
         height: "310px",
     };

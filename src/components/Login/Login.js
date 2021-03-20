@@ -1,3 +1,4 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import { useHistory, useLocation } from "react-router";
 import { UserContext } from "../../App";
@@ -158,7 +159,7 @@ function Login() {
                             <a href=""> sign in?</a>{" "}
                         </div>
                     </p>
-                    <h3>Or</h3>
+                    <h3 className="text-warning">Or</h3>
                     {/* {user.isLoggedIn ? (
                         <button onClick={signOut}>Sign Out</button>
                     ) : (
@@ -170,18 +171,19 @@ function Login() {
                         className="btn btn-danger btn-block"
                         onClick={googleSignIn}
                     >
+                        <FontAwesomeIcon icon={["fab", "google"]} />
                         Continue With Google
                     </button>
                     <button
                         className="btn btn-primary btn-block"
                         onClick={facebookSignIn}
-                    >
+                    ><FontAwesomeIcon icon={["fab", "facebook"]} /> 
                         Continue With Facebook
                     </button>
                     <button
                         className="btn btn-dark btn-block"
                         onClick={githubSignIn}
-                    >
+                    ><FontAwesomeIcon icon={["fab", "github"]} />
                         Continue With GitHub
                     </button>
                     <p></p>

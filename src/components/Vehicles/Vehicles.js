@@ -4,8 +4,8 @@ import { useHistory } from "react-router";
 
 const Vehicles = (props) => {
     const history = useHistory()
-    const handleBook = (vehicleType) => {
-        history.push(`/destination/${vehicleType}`);
+    const handleBook = (title) => {
+        history.push(`/destination/${title}`);
     }
     return (
         <div className="">
