@@ -1,6 +1,6 @@
 # First Ride
 
-This is a ride sharing app(React app). Where you can find different type of vehicle and you can choose according to your need.
+This is a ride sharing app(React app). Where you can find different type of vehicle and you can choose according to your need select location and go.
 
 ## Live Site Link
 
