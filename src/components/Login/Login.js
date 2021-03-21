@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../App";
 import "./Login.css";
 import {
@@ -131,9 +131,9 @@ function Login() {
                                 setNewUser(!newUser);
                             }}
                         >
-                            <p className="">
+                            <Link className="">
                                 {newUser ? " Sign In" : "Sign Up"}
-                            </p>{" "}
+                            </Link>{" "}
                         </div>
                     </p>
                     <h3 className="text-warning">Or</h3>
