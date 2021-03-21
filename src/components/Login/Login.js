@@ -86,7 +86,6 @@ function Login() {
             history.replace(from);
         }
     };
-    console.log(user);
     return (
         <div className="mt-5 form-container">
             <div className="form-card">
