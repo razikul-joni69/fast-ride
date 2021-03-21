@@ -8,7 +8,6 @@ import {
     handleFacebookSignIn,
     handleGithubSignIn,
     handleGoogleSignIn,
-    handleSignOut,
     initializeLoginFramework,
     loginWithEmailAndPassword,
 } from "./LoginManager";
@@ -46,12 +45,12 @@ function Login() {
             handleResponse(res, true);
         });
     };
-    const signOut = () => {
-        handleSignOut().then((res) => {
-            handleResponse(res, false);
-        });
-    };
-
+    // const signOut = () => {
+    //     handleSignOut().then((res) => {
+    //         handleResponse(res, false);
+    //     });
+    // };
+    let validation = true;
     const handleBlur = (event) => {
         let isFormValid = true;
         if (event.target.name === "email") {
@@ -133,6 +132,11 @@ function Login() {
                         required
                     />
                     <br />
+                    { validation ? (
+                        <h2> </h2>
+                    ) : (
+                        <h2>Please Enter a Valid email and password</h2>
+                    )}
                     <input
                         type="checkbox"
                         onChange={() => {
@@ -160,24 +164,26 @@ function Login() {
                         </div>
                     </p>
                     <h3 className="text-warning">Or</h3>
-                    
+
                     <button
                         className="btn btn-danger btn-block"
                         onClick={googleSignIn}
                     >
-                        <FontAwesomeIcon icon={["fab", "google"]} />
+                        <FontAwesomeIcon className="mr-2" icon={["fab", "google"]} />
                         Continue With Google
                     </button>
                     <button
                         className="btn btn-primary btn-block"
                         onClick={facebookSignIn}
-                    ><FontAwesomeIcon icon={["fab", "facebook"]} /> 
+                    >
+                        <FontAwesomeIcon className="mr-2" icon={["fab", "facebook"]} />
                         Continue With Facebook
                     </button>
                     <button
                         className="btn btn-dark btn-block"
                         onClick={githubSignIn}
-                    ><FontAwesomeIcon icon={["fab", "github"]} />
+                    >
+                        <FontAwesomeIcon className="mr-2" icon={["fab", "github"]} />
                         Continue With GitHub
                     </button>
                     <p></p>

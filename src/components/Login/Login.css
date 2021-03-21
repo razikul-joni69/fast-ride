@@ -6,10 +6,8 @@
 }
 .form-card {
     width: 500px;
-    /* border: 1px solid grey; */
     padding: 10px 20px;
-    /* border-radius: 10px; */
     border-radius: 30px;
     background: #ffffff;
-    box-shadow: 14px 14px 25px #ababab, -14px -14px 25px #ffffff;
+    box-shadow: 8px 8px 25px #ababab, -8px -8px 25px #ffffff;
 }

@@ -12,14 +12,16 @@ import Login from "./components/Login/Login";
 import NotFound from "./components/NotFound/NotFound";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import User from "./components/User/User";
+import Background from "../src/components/Images/Bg.png"
 
 library.add(fab);
 export const UserContext = createContext();
 function App() {
     const [loggedInUser, setLoggedInUser] = useState({});
     return (
-        <div>
+        <div style={{backgroundImage: `url(${Background})`}} className="background-img">
             <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+            {/* <div style={{backgroundImage: `url(${Background})`}}></div> */}
                 <Router>
                     <Header></Header>
                     <Switch>
