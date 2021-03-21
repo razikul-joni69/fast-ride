@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
+import Map from "../Map/Map";
 import "./Destination.css";
-
 const Direction = (props) => {
     const { title } = useParams();
-    console.log(title);
+    console.log(useParams());
+    console.log("title",title);
 
     const [destination, setDestination] = useState({
         success: false,
@@ -40,9 +41,9 @@ const Direction = (props) => {
                         <div className="search-result">
                             <div className="inner-search">
                                 <h3>
-                                    {destination.from} <small>to</small>{" "}
+                                    From: {destination.from} {" "}
                                 </h3>
-                                <h3>{destination.to}</h3>
+                                <h3>To: {destination.to}</h3>
                             </div>
                         </div>
                     ) : (
@@ -53,7 +54,7 @@ const Direction = (props) => {
                                     name="from"
                                     type="text"
                                     onBlur={handleBlur}
-                                    placeholder="Enter Address"
+                                    placeholder="Enter Pickup Address"
                                 />
                             </Form.Group>
                             <Form.Group controlId="formBasicPassword">
@@ -62,7 +63,7 @@ const Direction = (props) => {
                                     name="to"
                                     onBlur={handleBlur}
                                     type="text"
-                                    placeholder="Enter Address"
+                                    placeholder="Enter Destination Address"
                                 />
                             </Form.Group>
                             {destination.error ? (
@@ -82,15 +83,7 @@ const Direction = (props) => {
                     )}
                 </div>
                 <div className="col-md-8 ">
-                    <iframe
-                        className="map"
-                        title="google-map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233668.38703953085!2d90.27923830451422!3d23.780573256586983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8b087026b81%3A0x8fa563bbdd5904c2!2sDhaka!5e0!3m2!1sen!2sbd!4v1616219027045!5m2!1sen!2sbd"
-                        width=""
-                        height=""
-                        allowFullScreen=""
-                        loading="lazy"
-                    ></iframe>
+                    <Map></Map>
                 </div>
             </div>
         </div>

@@ -14,7 +14,7 @@ const User = () => {
     };
     return (
         <div className="text-center">
-            <h1>Name: {loggedInUser.name}</h1>
+            <h1>Name: {loggedInUser.name || loggedInUser.displayName}</h1>
             <h3>Email: {loggedInUser.email}</h3>
             <img src={loggedInUser.photo} alt=""/><p></p>
             {loggedInUser.email ? (

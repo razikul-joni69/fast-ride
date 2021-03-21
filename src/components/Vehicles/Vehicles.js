@@ -1,10 +1,10 @@
 import React from "react";
 import { Card } from "react-bootstrap";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 
 const Vehicles = (props) => {
     const history = useHistory();
-    const handleBook = (title) => {
+    const handleVehicle = (title) => {
         history.push(`/destination/${title}`);
     };
     const style = {
@@ -15,7 +15,7 @@ const Vehicles = (props) => {
         <div className="">
             <div className="m-2">
                 <Card
-                    onClick={() => handleBook(props.vehicle.title)}
+                    onClick={() => handleVehicle(props.vehicle.title)}
                     style={style}
                 >
                     <Card.Img

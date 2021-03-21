@@ -5,8 +5,8 @@ import { UserContext } from "../../App";
 import "./Header.css";
 
 const Header = () => {
-    const [loggedInUser] = useContext(UserContext);
-    console.log(loggedInUser.name);
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log(loggedInUser.displayName);
     return (
         <div className="header">
             <Navbar className="container" bg="" variant="light">
@@ -15,7 +15,7 @@ const Header = () => {
                     <Link className="nav-link  " to="/home">
                         Home
                     </Link>
-                    <Link className="nav-link " to="/destination">
+                    <Link className="nav-link " to="/destination/BIKE">
                         Destination
                     </Link>
                     <Link className="nav-link " to="/blog">
@@ -24,10 +24,10 @@ const Header = () => {
                     <Link className="nav-link " to="/contact">
                         Contact
                     </Link>
-                    {loggedInUser.name ? (
+                    {loggedInUser.name || loggedInUser.displayName ? (
                         <Link className="nav-link text-warning" to="/user">
                             {" "}
-                            {loggedInUser.name}
+                            {loggedInUser.name || loggedInUser.displayName}
                         </Link>
                     ) : (
                         <Link

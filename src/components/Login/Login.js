@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
-import { useHistory, useLocation } from "react-router";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../App";
 import "./Login.css";
 import {
@@ -20,6 +20,7 @@ function Login() {
         email: "",
         password: "",
         photo: "",
+        error: "",
     });
     initializeLoginFramework();
 
@@ -45,12 +46,6 @@ function Login() {
             handleResponse(res, true);
         });
     };
-    // const signOut = () => {
-    //     handleSignOut().then((res) => {
-    //         handleResponse(res, false);
-    //     });
-    // };
-    let validation = true;
     const handleBlur = (event) => {
         let isFormValid = true;
         if (event.target.name === "email") {
@@ -91,7 +86,8 @@ function Login() {
             history.replace(from);
         }
     };
-
+    console.log(user);
+    console.log(user.error);
     return (
         <div className="mt-5 form-container">
             <div className="form-card">
@@ -102,7 +98,7 @@ function Login() {
                         <img src={user.photo} alt="" />
                     </div>
                 )}
-                <form onSubmit={handleSubmit}>
+                <div onSubmit={handleSubmit}>
                     <br />
                     {newUser && (
                         <input
@@ -132,20 +128,12 @@ function Login() {
                         required
                     />
                     <br />
-                    { validation ? (
-                        <h2> </h2>
+                    {/* { user.error ? (
+                        <h2> Please Enter a Valid email and password </h2>
                     ) : (
-                        <h2>Please Enter a Valid email and password</h2>
-                    )}
-                    <input
-                        type="checkbox"
-                        onChange={() => {
-                            setNewUser(!newUser);
-                        }}
-                        name="newUser"
-                        id=""
-                    />
-                    <label htmlFor="newUser">New user Sign Up</label>
+                        <p> </p>
+                    )} */}
+                    <p style={{ color: "red" }}>Error: {user.error}</p>
                     <input
                         onClick={handleSubmit}
                         className="btn btn-primary btn-block"
@@ -153,14 +141,16 @@ function Login() {
                         value={newUser ? "Sign Up" : " Sign In"}
                     />
                     <p className="forgot-password text-center">
-                        Already registered{" "}
+                        {newUser ? "Already registered" : "Create an Account"}{" "}
                         <div
-                            onChange={() => {
+                            onClick={() => {
                                 setNewUser(!newUser);
                             }}
                             href="#"
                         >
-                            <a href=""> sign in?</a>{" "}
+                            <Link className="" href="">
+                                {newUser ? " Sign In" : "Sign Up"}
+                            </Link>{" "}
                         </div>
                     </p>
                     <h3 className="text-warning">Or</h3>
@@ -169,32 +159,40 @@ function Login() {
                         className="btn btn-danger btn-block"
                         onClick={googleSignIn}
                     >
-                        <FontAwesomeIcon className="mr-2" icon={["fab", "google"]} />
+                        <FontAwesomeIcon
+                            className="mr-2"
+                            icon={["fab", "google"]}
+                        />
                         Continue With Google
                     </button>
                     <button
                         className="btn btn-primary btn-block"
                         onClick={facebookSignIn}
                     >
-                        <FontAwesomeIcon className="mr-2" icon={["fab", "facebook"]} />
+                        <FontAwesomeIcon
+                            className="mr-2"
+                            icon={["fab", "facebook"]}
+                        />
                         Continue With Facebook
                     </button>
                     <button
                         className="btn btn-dark btn-block"
                         onClick={githubSignIn}
                     >
-                        <FontAwesomeIcon className="mr-2" icon={["fab", "github"]} />
+                        <FontAwesomeIcon
+                            className="mr-2"
+                            icon={["fab", "github"]}
+                        />
                         Continue With GitHub
                     </button>
                     <p></p>
-                    <p style={{ color: "red" }}>{user.error}</p>
 
                     {user.success && (
                         <p style={{ color: "green" }}>
                             Account {newUser ? "Created" : "Login"} Successfully
                         </p>
                     )}
-                </form>
+                </div>
             </div>
         </div>
     );
