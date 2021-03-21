@@ -6,7 +6,6 @@ import "./Header.css";
 
 const Header = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
-    console.log(loggedInUser.displayName);
     return (
         <div className="header">
             <Navbar className="container" bg="" variant="light">

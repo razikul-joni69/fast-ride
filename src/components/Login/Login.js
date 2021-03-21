@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import { UserContext } from "../../App";
 import "./Login.css";
 import {
@@ -63,6 +63,7 @@ function Login() {
         }
     };
     const handleSubmit = (e) => {
+        e.preventDefault();
         if (newUser && user.email && user.password) {
             createUserWithEmailandPassword(
                 user.name,
@@ -77,7 +78,6 @@ function Login() {
                 handleResponse(res, true);
             });
         }
-        e.preventDefault();
     };
     const handleResponse = (res, redirect) => {
         setUser(res);
@@ -86,8 +86,6 @@ function Login() {
             history.replace(from);
         }
     };
-    console.log(user);
-    console.log(user.error);
     return (
         <div className="mt-5 form-container">
             <div className="form-card">
@@ -98,7 +96,7 @@ function Login() {
                         <img src={user.photo} alt="" />
                     </div>
                 )}
-                <div onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit}>
                     <br />
                     {newUser && (
                         <input
@@ -133,9 +131,9 @@ function Login() {
                     ) : (
                         <p> </p>
                     )} */}
-                    <p style={{ color: "red" }}>Error: {user.error}</p>
+                    {/* <p style={{ color: "red" }}>Error: {user.error}</p> */}
+                    {user.error}
                     <input
-                        onClick={handleSubmit}
                         className="btn btn-primary btn-block"
                         type="submit"
                         value={newUser ? "Sign Up" : " Sign In"}
@@ -146,11 +144,10 @@ function Login() {
                             onClick={() => {
                                 setNewUser(!newUser);
                             }}
-                            href="#"
                         >
-                            <Link className="" href="">
+                            <p className="">
                                 {newUser ? " Sign In" : "Sign Up"}
-                            </Link>{" "}
+                            </p>{" "}
                         </div>
                     </p>
                     <h3 className="text-warning">Or</h3>
@@ -192,7 +189,7 @@ function Login() {
                             Account {newUser ? "Created" : "Login"} Successfully
                         </p>
                     )}
-                </div>
+                </form>
             </div>
         </div>
     );

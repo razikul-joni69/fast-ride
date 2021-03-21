@@ -30,12 +30,6 @@ function App() {
                         <Route path="/home">
                             <Home />
                         </Route>
-                        <PrivateRoute path="/destination">
-                            <Destination />
-                        </PrivateRoute>
-                        <PrivateRoute path="/destination/:title">
-                            <Destination />
-                        </PrivateRoute>
                         <Route path="/contact">
                             <Contact />
                         </Route>
@@ -45,6 +39,12 @@ function App() {
                         <Route path="/user">
                             <User />
                         </Route>
+                        <PrivateRoute path="/destination/:title">
+                            <Destination></Destination>
+                        </PrivateRoute>
+                        <PrivateRoute path="/destination">
+                            <Destination />
+                        </PrivateRoute>
                         <Route exact path="/">
                             <Home />
                         </Route>

@@ -1,27 +1,40 @@
-.search-form{
+.search-box{
     background: rgba(128, 128, 128, 0.295);
     padding: 10px;
     border-radius: 10px;
 }
-.search-form2{
+.search-form{
     background-color: rgba(255, 99, 71, 0.795);
     padding: 10px;
     border-radius: 10px;
 }
 .search-result{
-    color: black;
+    color: white;
     background: rgb(247, 119, 96);
     border-radius: 5px;
     padding: 10px;
 }
+.search-img-box{
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(247, 119, 96);
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+    vertical-align: middle;
+}
+.search-img{
+    height: 80px;
+    width: 80px;
+    padding: 10px;
+    float: left;
+}
 .map-destination{
     margin-top: 10px;
 }
-.map{
-    height: 550px;
-    width: 100%;
-}
-.inner-search{
+/* .search-bar{
     padding: 0 10px;
     border-left: 5px solid grey;
-}
+} */
