@@ -9,16 +9,15 @@ const Header = () => {
     return (
         <div className="header">
             <Navbar className="container" bg="" variant="light">
-                <Link to="/home"><Navbar.Brand to="/home">Fast Ride</Navbar.Brand></Link>
+                <Link to="/home">
+                    <Navbar.Brand to="/home">Fast Ride</Navbar.Brand>
+                </Link>
                 <Nav className="ml-auto">
                     <Link className="nav-link  " to="/home">
                         Home
                     </Link>
                     <Link className="nav-link " to="/destination/BIKE">
                         Destination
-                    </Link>
-                    <Link className="nav-link " to="/blog">
-                        Blog
                     </Link>
                     <Link className="nav-link " to="/contact">
                         Contact

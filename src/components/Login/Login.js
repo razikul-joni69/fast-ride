@@ -86,16 +86,10 @@ function Login() {
             history.replace(from);
         }
     };
+    console.log(user);
     return (
         <div className="mt-5 form-container">
             <div className="form-card">
-                {user.isLoggedIn && (
-                    <div>
-                        <h1>Welcome, {user.name}</h1>
-                        <p>{user.email}</p>
-                        <img src={user.photo} alt="" />
-                    </div>
-                )}
                 <form onSubmit={handleSubmit}>
                     <br />
                     {newUser && (
@@ -126,13 +120,6 @@ function Login() {
                         required
                     />
                     <br />
-                    {/* { user.error ? (
-                        <h2> Please Enter a Valid email and password </h2>
-                    ) : (
-                        <p> </p>
-                    )} */}
-                    {/* <p style={{ color: "red" }}>Error: {user.error}</p> */}
-                    {user.error}
                     <input
                         className="btn btn-primary btn-block"
                         type="submit"

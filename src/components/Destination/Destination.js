@@ -14,10 +14,8 @@ import "./Destination.css";
 
 const Destination = (props) => {
     const { title } = useParams();
-    console.log("title", title);
 
     const vehicleName = FakeData.find((vehicle) => vehicle.title === title);
-    console.log("object", vehicleName.imgUrl);
     const [destination, setDestination] = useState({
         success: false,
         from: "",
@@ -72,7 +70,6 @@ const Destination = (props) => {
                                     <FontAwesomeIcon icon={faUserFriends} />
                                     {vehicleName.capacity}
                                 </h4>
-                                <i class="fas "></i>
                                 <h4>
                                     <FontAwesomeIcon icon={faDollarSign} />
                                     {vehicleName.price}
@@ -105,7 +102,6 @@ const Destination = (props) => {
                                     <FontAwesomeIcon icon={faUserFriends} />
                                     {vehicleName.capacity}
                                 </h4>
-                                <i class="fas "></i>
                                 <h4>
                                     <FontAwesomeIcon icon={faDollarSign} />
                                     {vehicleName.price}
@@ -135,7 +131,7 @@ const Destination = (props) => {
                                 />
                             </Form.Group>
                             {destination.error ? (
-                                <p>Select your Destination</p>
+                                <p>Please Select Your Destination</p>
                             ) : (
                                 <p></p>
                             )}

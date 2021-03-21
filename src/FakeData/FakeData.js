@@ -13,7 +13,7 @@ const vehicles = [
             "https://cdn.pixabay.com/photo/2012/04/12/23/48/car-30990__340.png  ",
         id: 2,
         capacity: 3,
-        price: 49,
+        price: 85,
     },
     {
         title: "BUS",
